@@ -380,7 +380,7 @@ class DeliveryApp(ctk.CTk):
         self.is_setup = False
         self.tick = 0
 
-        self.title("NCDS // NIGHT CITY DELIVERY SYSTEMS v2.077")
+        self.title("NCDS")
         self.minsize(1100, 650)
         self.configure(fg_color=COLORS["bg_dark"])
 
@@ -431,6 +431,9 @@ class DeliveryApp(ctk.CTk):
         self.bind("3", lambda e: self._set_speed(10))
         self.bind("4", lambda e: self._set_speed(15))
         self.bind("5", lambda e: self._set_speed(25))
+       # self.update_idletasks()
+       # self.state("zoomed")
+
 
     def _build_left_panel(self):
         left_panel = ctk.CTkFrame(self, corner_radius=4, fg_color=COLORS["bg_panel"],

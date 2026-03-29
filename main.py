@@ -17,9 +17,15 @@ def main():
             root.destroy()
 
             app = DeliveryApp()
-            app.state("zoomed")
-            app.lift()
-            app.focus_force()
+            app.withdraw()
+
+            def show_maximized():
+                app.state("zoomed")
+                app.deiconify()
+                app.lift()
+                app.focus_force()
+
+            app.after(50, show_maximized)
             app.mainloop()
 
         root.after(2000, finish_loading)
